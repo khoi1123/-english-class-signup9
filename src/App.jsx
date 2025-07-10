@@ -35,16 +35,15 @@ function Home() {
       setSubmitted(true);
     } catch (err) {
       alert("Không gửi được dữ liệu. Vui lòng kiểm tra lại.");
-      console.error(err);
     }
   };
 
   return (
-    <div className="flex items-center justify-center min-h-screen px-4 py-8 bg-gray-50">
+    <div className="flex items-center justify-center min-h-screen px-4 py-8 bg-gradient-to-b from-pink-100 to-white">
       <div className="bg-white rounded-2xl shadow-2xl max-w-2xl w-full p-8 space-y-6">
-        <div className="flex justify-between">
-          <Link to="/signup" className="text-blue-500 hover:underline text-sm">Đăng ký tài khoản</Link>
-          <Link to="/login" className="text-green-500 hover:underline text-sm">Đăng nhập</Link>
+        <div className="flex justify-between text-sm">
+          <Link to="/signup" className="text-pink-600 hover:underline">Đăng ký tài khoản</Link>
+          <Link to="/login" className="text-pink-600 hover:underline">Đăng nhập</Link>
         </div>
 
         <div className="flex justify-center">
@@ -66,7 +65,7 @@ function Home() {
               value={form.name}
               onChange={handleChange}
               required
-              className="w-full border border-gray-300 rounded-lg p-3"
+              className="w-full border border-gray-300 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-pink-400"
             />
             <input
               name="email"
@@ -75,19 +74,19 @@ function Home() {
               value={form.email}
               onChange={handleChange}
               required
-              className="w-full border border-gray-300 rounded-lg p-3"
+              className="w-full border border-gray-300 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-pink-400"
             />
             <textarea
               name="message"
               placeholder="Thông tin thêm về bé hoặc câu hỏi (nếu có)"
               value={form.message}
               onChange={handleChange}
-              className="w-full border border-gray-300 rounded-lg p-3"
+              className="w-full border border-gray-300 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-pink-400"
               rows="4"
             />
             <button
               type="submit"
-              className="w-full bg-pink-600 text-white py-3 rounded-lg font-semibold hover:bg-pink-700"
+              className="w-full bg-pink-600 text-white py-3 rounded-lg font-semibold hover:bg-pink-700 transition"
             >
               Gửi đăng ký
             </button>
