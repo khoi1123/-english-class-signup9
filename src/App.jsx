@@ -20,25 +20,31 @@ function Home() {
     }
 
     try {
-      const response = await fetch("https://sheetdb.io/api/v1/0ehumlynlqpo2", {
+      const response = await fetch("https://sheetdb.io/api/v1/4hw45peonj95w", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
+        headers: {
+          "Content-Type": "application/json",
+        },
         body: JSON.stringify({ data: form }),
       });
 
-      if (!response.ok) throw new Error("Gửi dữ liệu thất bại");
+      if (!response.ok) {
+        throw new Error("Gửi dữ liệu thất bại");
+      }
+
       setSubmitted(true);
     } catch (err) {
       alert("Không gửi được dữ liệu. Vui lòng kiểm tra lại.");
+      console.error(err);
     }
   };
 
   return (
-    <div className="flex items-center justify-center min-h-screen px-4 py-8 bg-gradient-to-b from-pink-100 to-white">
+    <div className="flex items-center justify-center min-h-screen px-4 py-8 bg-gray-50">
       <div className="bg-white rounded-2xl shadow-2xl max-w-2xl w-full p-8 space-y-6">
-        <div className="flex justify-between text-sm">
-          <Link to="/signup" className="text-pink-600 hover:underline">Đăng ký tài khoản</Link>
-          <Link to="/login" className="text-pink-600 hover:underline">Đăng nhập</Link>
+        <div className="flex justify-between">
+          <Link to="/signup" className="text-blue-500 hover:underline text-sm">Đăng ký tài khoản</Link>
+          <Link to="/login" className="text-green-500 hover:underline text-sm">Đăng nhập</Link>
         </div>
 
         <div className="flex justify-center">
@@ -60,7 +66,7 @@ function Home() {
               value={form.name}
               onChange={handleChange}
               required
-              className="w-full border border-gray-300 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-pink-400"
+              className="w-full border border-gray-300 rounded-lg p-3"
             />
             <input
               name="email"
@@ -69,19 +75,19 @@ function Home() {
               value={form.email}
               onChange={handleChange}
               required
-              className="w-full border border-gray-300 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-pink-400"
+              className="w-full border border-gray-300 rounded-lg p-3"
             />
             <textarea
               name="message"
               placeholder="Thông tin thêm về bé hoặc câu hỏi (nếu có)"
               value={form.message}
               onChange={handleChange}
-              className="w-full border border-gray-300 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-pink-400"
+              className="w-full border border-gray-300 rounded-lg p-3"
               rows="4"
             />
             <button
               type="submit"
-              className="w-full bg-pink-600 text-white py-3 rounded-lg font-semibold hover:bg-pink-700 transition"
+              className="w-full bg-pink-600 text-white py-3 rounded-lg font-semibold hover:bg-pink-700"
             >
               Gửi đăng ký
             </button>
@@ -111,12 +117,3 @@ export default function App() {
     </Router>
   );
 }
-✅ Sau khi sửa:
-Kiểm tra file index.css có 3 dòng này chưa:
-
-css
-Copy
-Edit
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
