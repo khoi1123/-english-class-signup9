@@ -22,16 +22,11 @@ function Home() {
     try {
       const response = await fetch("https://sheetdb.io/api/v1/0ehumlynlqpo2", {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ data: form }),
       });
 
-      if (!response.ok) {
-        throw new Error("Gửi dữ liệu thất bại");
-      }
-
+      if (!response.ok) throw new Error("Gửi dữ liệu thất bại");
       setSubmitted(true);
     } catch (err) {
       alert("Không gửi được dữ liệu. Vui lòng kiểm tra lại.");
@@ -116,3 +111,12 @@ export default function App() {
     </Router>
   );
 }
+✅ Sau khi sửa:
+Kiểm tra file index.css có 3 dòng này chưa:
+
+css
+Copy
+Edit
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
