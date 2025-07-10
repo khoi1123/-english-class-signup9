@@ -20,7 +20,7 @@ function Home() {
     }
 
     try {
-      const response = await fetch("https://sheetdb.io/api/v1/4hw45peonj95w", {
+      const response = await fetch("https://sheetdb.io/api/v1/0ehumlynlqpo2", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
